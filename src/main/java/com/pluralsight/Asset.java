@@ -36,7 +36,7 @@ public class Asset {
         this.originalCost = originalCost;
     }
     public double getValue(){
-        return originalCost;
+        return this.originalCost;
 
     }
 }

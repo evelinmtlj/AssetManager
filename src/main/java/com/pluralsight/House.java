@@ -1,5 +1,8 @@
 package com.pluralsight;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+
 public class House extends Asset {
     private String address;
     private int condition;
@@ -50,14 +53,14 @@ public class House extends Asset {
     @Override
     public double getValue() {
         double squareFtPrice = switch (condition) {
-            case 1 -> 180;
-            case 2 -> 130;
-            case 3 -> 90;
-            case 4 -> 80;
+            case 1 -> 180; //excellent
+            case 2 -> 130; //good
+            case 3 -> 90; //fair
+            case 4 -> 80; //poor
             default -> 0;
         };
 
-        return (squareFtPrice * squareFoot) + (.25 * lotSize);
+        return (squareFtPrice * this.squareFoot) + (.25 * this.lotSize);
 
     }
 
